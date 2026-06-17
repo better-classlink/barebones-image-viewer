@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Barebones silly image viewer</title>
+
+    <script defer>
+        document.addEventListener('DOMContentLoaded', (event) => {
+        const queryString = window.location.search
+        const URLParams = new URLSearchParams(queryString)
+
+        let imageSrc = URLParams.get('imageSource')
+
+        document.querySelector('img').src = imageSrc
+        console.log(imageSrc)
+        })
+    </script>
+
+    <style>
+        .baseImage {
+            all: unset;
+            object-fit: fill;
+            width: 100vw;
+            height: 100vh;
+        }
+
+        body {
+            all: unset;
+            overflow: hidden;
+        }
+    </style>
+  </head>
+  <body>
+    <img class="baseImage">
+  </body>
+</html>
